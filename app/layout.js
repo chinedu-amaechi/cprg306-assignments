@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "CPRG306-Assignment",
+  title: "Shopping List",
   description: "DEMOs for CPRG306 Assignment",
 };
 
