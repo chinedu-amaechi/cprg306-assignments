@@ -18,19 +18,15 @@ export default function NewItem() {
     };
 
   return (
-    <div className="flex">
+    <div className="flex p-1 m-4 bg-slate-600 text-slate-950 w-60">
 
-      <div className="flex-2">
-        <input type="text" value={quantity} />
-      </div>
-
-      <div className="flex-1">
-        <button onClick={decrement}>-</button>
-      </div>
-
-      <div className="flex-1">
-        <button onClick={increment}>+</button>
-      </div>
+      
+        <span><input type="text" value={quantity} /></span>
+           
+        <button type="button" className="w-10 bg-blue-500 text-black font-bold rounded-lg shadow-md hover:bg-red-200 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-opacity-75" onClick={decrement}>-</button>
+     
+        <button type="button" className="w-10 bg-blue-500 text-black font-bold rounded-lg shadow-md hover:bg-red-200 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-opacity-75" onClick={increment}>+</button>
+     
       
     </div>
         
