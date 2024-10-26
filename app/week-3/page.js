@@ -1,6 +1,6 @@
 import ItemList from "./item-list";
 
-export default function Page() {
+function Page() {
   return (
     <main className="m-1">
       <div>
@@ -13,3 +13,5 @@ export default function Page() {
     </main>
   );
 }
+
+export default Page;

@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function NewItem() {
     const [quantity, setQuantity] = useState(1);
+    let buttonStyle = "w-8 bg-blue-500 text-black font-bold rounded-lg shadow-md hover:bg-red-200 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-opacity-75";
     
     const increment = () => {
       if (quantity < 20) {
@@ -22,13 +23,9 @@ export default function NewItem() {
       <div className="flex justify-between items-center">
         <span className="text-black text-xl">{quantity}</span>
         <div className="flex gap-2">
-          <button
-            className="w-8 bg-blue-500 text-black font-bold rounded-lg shadow-md hover:bg-red-200 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-opacity-75"
-            onClick={decrement} disabled={quantity == 1}>-</button>
+          <button className={buttonStyle} onClick={decrement} disabled={quantity == 1}>-</button>
 
-          <button
-            className="w-8 bg-blue-500 text-black font-bold rounded-lg shadow-md hover:bg-red-200 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-opacity-75"
-            onClick={increment} disabled={quantity == 20}>+</button>
+          <button className = {buttonStyle} onClick={increment} disabled={quantity == 20}>+</button>
         </div>
     </div>
   </div>
