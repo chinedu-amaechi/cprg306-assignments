@@ -88,7 +88,11 @@ function ItemList() {
       <Item {...item9} />
       <Item {...item10} />
       <Item {...item11} />
-      <Item {...item12} />
+      <Item
+        name={item12.name}
+        quantity={item12.quantity}
+        category={item12.category}
+      />
     </ul>
   );
 }
