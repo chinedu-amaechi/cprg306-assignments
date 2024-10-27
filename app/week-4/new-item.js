@@ -26,12 +26,12 @@ function NewItem() {
           <button
               className={buttonStyle}
               onClick={decrement}
-              disabled={quantity == 1}>-</button>
+              disabled={quantity === 1}>-</button>
 
           <button 
               className={buttonStyle}
               onClick={increment}
-              disabled={quantity == 20}>+</button>
+              disabled={quantity === 20}>+</button>
         </div>
     </div>
   </div>
