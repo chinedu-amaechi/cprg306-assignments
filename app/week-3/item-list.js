@@ -76,7 +76,7 @@ function ItemList() {
   
   // Render these items using the Item component you just created, passing item data as props
   return (
-    <ul>
+    <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
       <Item {...item1} />
       <Item {...item2} />
       <Item {...item3} />
