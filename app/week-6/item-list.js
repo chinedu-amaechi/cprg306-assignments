@@ -1,6 +1,6 @@
 import Item from "./item";
 
-export default function ItemList() {
+function ItemList() {
   const item1 = {
     name: "milk, 4 L 🥛",
     quantity: 1,
@@ -73,64 +73,21 @@ export default function ItemList() {
     category: "household",
   };
 
+  
   // Render these items using the Item component you just created, passing item data as props
   return (
-    <ul>
-        <Item
-          name={item1.name}
-          quantity={item1.quantity}
-          category={item1.category}
-        />
-            <Item
-        name={item2.name}
-        quantity={item2.quantity}
-        category={item2.category}
-      />
-      <Item
-        name={item3.name}
-        quantity={item3.quantity}
-        category={item3.category}
-      />
-      <Item
-        name={item4.name}
-        quantity={item4.quantity}
-        category={item4.category}
-      />
-      <Item
-        name={item5.name}
-        quantity={item5.quantity}
-        category={item5.category}
-      />
-      <Item
-        name={item6.name}
-        quantity={item6.quantity}
-        category={item6.category}
-      />
-      <Item
-        name={item7.name}
-        quantity={item7.quantity}
-        category={item7.category}
-      />
-      <Item
-        name={item8.name}
-        quantity={item8.quantity}
-        category={item8.category}
-      />
-      <Item
-        name={item9.name}
-        quantity={item9.quantity}
-        category={item9.category}
-      />
-      <Item
-        name={item10.name}
-        quantity={item10.quantity}
-        category={item10.category}
-      />
-      <Item
-        name={item11.name}
-        quantity={item11.quantity}
-        category={item11.category}
-      />
+    <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+      <Item {...item1} />
+      <Item {...item2} />
+      <Item {...item3} />
+      <Item {...item4} />
+      <Item {...item5} />
+      <Item {...item6} />
+      <Item {...item7} />
+      <Item {...item8} />
+      <Item {...item9} />
+      <Item {...item10} />
+      <Item {...item11} />
       <Item
         name={item12.name}
         quantity={item12.quantity}
@@ -139,3 +96,5 @@ export default function ItemList() {
     </ul>
   );
 }
+
+export default ItemList;
