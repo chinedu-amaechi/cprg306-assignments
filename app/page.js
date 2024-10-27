@@ -9,7 +9,7 @@ export default function Page() {
       <h1 className="font-extrabold text-4xl text-center text-red-700">Welcome to Development II</h1>
       <hr className="m-2 border-2 border-gray-800"/>
       <div className="m-3">
-      <p className="font-semibold text-2xl">CPRG-306: Web Development 2 - Assignments </p>
+      <p className="font-semibold text-2xl mb-5">CPRG-306: Web Development 2 - Assignments </p>
         <div className=" m-2 ml-0">
           <ul className="flex flex-wrap w-full gap-4 text-center font-semibold text-red-500 p-1 pl-0">
             <li className="mb-4"><Link href="/week-2" className= {listStyle}>Week 2</Link></li>
