@@ -2,10 +2,12 @@
 import { useState } from "react";
 
 
-function NewItem({onAddItem}) => {
-    const [quantity, setQuantity] = useState(1);
-    const [category, setCategory] = useState("produce");
-    const [name, setName] = useState("");
+
+const NewItem = ({onAddItem}) => {
+  const [name, setName] = useState("");  
+  const [quantity, setQuantity] = useState(1);
+  const [category, setCategory] = useState("produce");
+    
     let buttonStyle = "w-8 bg-blue-500 text-black font-bold rounded-lg shadow-md hover:bg-red-200 focus:outline-none focus:ring-2 disabled:bg-gray-400 disabled:cursor-not-allowed focus:ring-opacity-75";
     
     
@@ -19,7 +21,7 @@ function NewItem({onAddItem}) => {
     const decrement = (e) => {
       e.preventDefault();
       if (quantity > 1){
-      setQuantity(quantity - 1);
+        setQuantity(quantity - 1);
       }
     };
 
@@ -38,8 +40,8 @@ function NewItem({onAddItem}) => {
   };
     
     const generateId = () => {
-      return Math.random().toString(36).substring(2, 16);
-    }
+      return Math.random().toString(36).substring(2, 15);
+    };
 
   return (
     <form
@@ -89,17 +91,17 @@ function NewItem({onAddItem}) => {
           onChange={(e) => setCategory(e.target.value)}
           required
           className="p-2 mt-1 mb-1 border-gray-300 border text-black rounded-md">
-            <option value="produce">Produce</option>
-            <option value="dairy">Dairy</option>
-            <option value="bakery">Bakery</option>
-            <option value="meat">Meat</option>
-            <option value="frozen foods">Frozen Foods</option>
-            <option value="canned goods">Canned Goods</option>
-            <option value="dry goods">Dry Goods</option>
-            <option value="beverages">Beverages</option>
-            <option value="snacks">Snacks</option>
-            <option value="household">Household</option>
-            <option value="other">Other</option>
+            <option key = {"Produce"} value={"produce"}>Produce</option>
+            <option key = {"Diary"} value={"Diary"}>Diary</option>
+            <option key = {"Bakery"} value={"Bakery"}>Bakery</option>
+            <option key = {"Meat"} value={"Meat"}>Meat</option>
+            <option key = {"Frozen Foods"} value={"Frozen Foods"}>Frozen Foods</option>
+            <option key = {"Canned Goods"} value={"Canned Goods"}>Canned Goods</option>
+            <option key = {"Dry Goods"} value={"Dry Goods"}>Dry Goods</option>
+            <option key = {"Beverages"} value={"Beverages"}>Beverages</option>
+            <option key = {"Snacks"} value={"Snacks"}>Snacks</option>
+            <option key = {"Household"} value={"Household"}>Household</option>
+            <option key = {"Other"} value={"Other"}>Other</option>
         </select>
       </div>
       

@@ -53,7 +53,7 @@ function ItemList() {
 
     return (
         <div>
-            <div className='mb-4 flex gap-2'>
+            <div className='ml-3 mb-4 flex gap-2'>
                 <button
                     onClick={() => setSortBy("name")}
                     className={`px-4 py-2 rounded ${

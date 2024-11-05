@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Item from "./item";
-import items from "./items.json";
 
-function ItemList() {
+
+
+
+function ItemList({items}) {
     const [sortBy, setSortBy] = useState("name");
     const [groupByCategory, setGroupByCategory] = useState(false);
 
@@ -53,7 +55,7 @@ function ItemList() {
 
     return (
         <div>
-            <div className='mb-4 flex gap-2'>
+            <div className='ml-3 mb-4 flex gap-2'>
                 <button
                     onClick={() => setSortBy("name")}
                     className={`px-4 py-2 rounded ${
