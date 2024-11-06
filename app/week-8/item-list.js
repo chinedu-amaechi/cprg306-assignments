@@ -1,12 +1,11 @@
 "use client";
-
 import { useState } from "react";
 import Item from "./item";
 
 
 
 
-function ItemList({items}) {
+function ItemList({items, onItemSelect}) {
     const [sortBy, setSortBy] = useState("name");
     const [groupByCategory, setGroupByCategory] = useState(false);
 
@@ -38,7 +37,7 @@ function ItemList({items}) {
                         <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                             {items.map((item) => (
                                 <li key={item.id}>
-                                    <Item {...item} />
+                                    <Item {...item} onSelect={onItemSelect} />
                                 </li>
                             ))}
                         </ul>
@@ -47,14 +46,14 @@ function ItemList({items}) {
         } else {
             return sortedItems.map((item) => (
                 <li key={item.id}>
-                    <Item {...item} />
+                    <Item {...item} onSelect={onItemSelect} />
                 </li>
             ));
         }
     };
 
     return (
-        <div>
+        <div className="flex flex-col">
             <div className='ml-3 mb-4 flex gap-2'>
                 <button
                     onClick={() => setSortBy("name")}
@@ -76,27 +75,14 @@ function ItemList({items}) {
                 >
                     Sort by Category
                 </button>
-                <button
-                    onClick={() => setGroupByCategory(!groupByCategory)}
-                    className={`px-4 py-2 rounded ${
-                        groupByCategory
-                            ? "bg-green-500 text-white"
-                            : "bg-gray-200 text-black"
-                    }`}
-                >
-                    {groupByCategory ? "Ungroup" : "Group by Category"}
-                </button>
             </div>
-            <ul
-                className={
-                    groupByCategory
-                        ? ""
-                        : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-                }
-            >
-                {renderItems()}
-            </ul>
+            <div>
+                <ul>
+                    {renderItems()}
+                </ul>
+            </div>
         </div>
+   
     );
 }
 

@@ -8,10 +8,21 @@ import itemsData from "./items.json";
 
 function Page() {
     const [items, setItems] = useState(itemsData);
+    const [ selectedItemName, setSelectedItemName ] = useState("");
 
     const handleAddItem = (newItem) => {
         setItems((prevItems) => [...prevItems, newItem]);
     };
+
+    const handleItemSelect = (itemName) => {
+        const cleanName = itemName
+            .split(",")[0]
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-zA-Z ]/g, "");
+        setSelectedItemName(cleanName);
+    };
+
 
     return (
         <main className='container mx-auto px-4 py-8'>
@@ -23,8 +34,10 @@ function Page() {
             <div className='mb-8'>
                 <NewItem onAddItem={handleAddItem} />
             </div>
+            <div>
+                <ItemList items={items} />
+            </div>
             
-            <ItemList items={items} />
         </main>
     );
 }
