@@ -5,6 +5,8 @@ import { useState } from "react";
 import ItemList from "./item-list";
 import NewItem from "./new-item";
 import itemsData from "./items.json";
+import MealIdeas from "./meal-ideas";
+
 
 function Page() {
     const [items, setItems] = useState(itemsData);
@@ -34,10 +36,14 @@ function Page() {
             <div className='mb-8'>
                 <NewItem onAddItem={handleAddItem} />
             </div>
-            <div>
-                <ItemList items={items} />
+            <div className="flex flex-row gap-10">
+                <div>
+                    <ItemList items={items} />
+                </div>
+                <div>
+                    <MealIdeas ingredient={selectedItemName} />
+                </div>
             </div>
-            
         </main>
     );
 }
